@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <script src="/static/js/funciones.js"></script>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <div class="header">
+            <h1>🎛️ Ejercicio 2</h1>
+        </div>
+
+        <div class="contenido">
+            <form method="post">
+                <label for="nombre1">Ingresa tu nombre</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="nombre2">Ingresa tu contraseña</label>
+                <input type="password" id="passw" name="passw" required><br><br>
+
+
+                <div style="width: 100%; display: flex;">
+                    <div style="width: 50%">
+                        <button class="boton" type="submit" value="enviar" name="valor">✅ Verificar</button>
+                    </div>
+                    <div style="width: 50%;">
+                        <button class="boton" type="button" onclick="volver()">🏠 Volver</button>
+                    </div>
+
+                </div>
+            </form>
+
+            {% if verificar == True %}
+            <div style="padding: 20px;">
+                Bienvenido Usuario: {{ nombre }}
+            </div>
+            {% elif verificar == False %}
+            <div style="padding: 20px;">
+                Usuario o contraseña incorrectos
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="footer">
+            <p>Derechos Reservados &copy; 2023 | Juan Astorga</p>
+        </div>
+</body>
+
+</html>
